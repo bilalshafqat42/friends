@@ -1,7 +1,7 @@
 import { ImageBackground } from "expo-image";
 import { Link } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 const WelcomeScreen = () => {
   return (
@@ -11,7 +11,19 @@ const WelcomeScreen = () => {
       contentFit="cover"
     >
       <View style={styles.welcomeScreenContainer}>
-        <Text>WelcomeScreen</Text>
+        <Link href="/welcome">
+          <Image
+            source={require("../../assets/images/learning.png")}
+            style={styles.playButtonImage}
+          />
+        </Link>
+        <Link href="/welcome">
+          <Image
+            source={require("../../assets/images/quiz.png")}
+            style={styles.playButtonImage}
+          />
+        </Link>
+
         <Link href="/">
           <Text>Back to Home</Text>
         </Link>
@@ -24,7 +36,7 @@ export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   welcomeScreenContainer: {
-       flex: 1,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
@@ -36,5 +48,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: "100%", // makes it take full width of parent
     alignItems: "center", // center text inside
+  },
+  playButtonImage: {
+    width: 135,
+    height: 97,
   },
 });
