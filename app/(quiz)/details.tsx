@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const LearningScreen = () => {
+const DetailsScreen = () => {
   return (
     <View>
-      <Text>Learning</Text>
+      <Text>Quiz Details</Text>
     </View>
   );
 };
 
-export default LearningScreen;
+export default DetailsScreen;
 
 const styles = StyleSheet.create({});

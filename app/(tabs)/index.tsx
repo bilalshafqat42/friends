@@ -1,4 +1,5 @@
 import { ImageBackground } from "expo-image";
+import { Link } from "expo-router";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 
@@ -13,10 +14,12 @@ const HomeScreen = () => {
         source={require("../../assets/images/friends.png")}
         style={styles.logoImage}
       />
-      <Image
-        source={require("../../assets/images/play.png")}
-        style={styles.playButtonImage}
-      />
+      <Link href="/welcome">
+        <Image
+          source={require("../../assets/images/play.png")}
+          style={styles.playButtonImage}
+        />
+      </Link>
     </ImageBackground>
   );
 };
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
   logoImage: {
     width: 376,
     height: 220,
-    marginBottom: 20
+    marginBottom: 20,
   },
   playButtonImage: {
     width: 135,
