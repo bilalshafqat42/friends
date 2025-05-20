@@ -13,8 +13,10 @@ import BottomNavigation from "@/components/BottomNavigation";
 import { spells } from "../../assets/db/spell";
 import LearnComponent from "@/components/Learn";
 import { FlatList } from "react-native-gesture-handler";
+import { useRouter } from "expo-router";
 
 const LearningScreen = () => {
+  const router = useRouter();
   // const myData = [
   //   { id: 1, name: "Bilal", desc: "welcome i am bilal the developer" },
   //   { id: 2, name: "Bilal", desc: "welcome i am bilal the developer" },
@@ -41,42 +43,31 @@ const LearningScreen = () => {
       style={styles.learningScreen}
     >
       <TopNavigation />
-      <View style={styles.singleLearning}>
-        <Image
-          source={require("../../assets/images/learning/ant.png")}
-          style={styles.singleLearningImage}
-        />
-        <Text style={styles.headingSingle}>ANT</Text>
-        <TouchableOpacity style={styles.playButton}>
-          <Text style={styles.singleButtonText}>Play</Text>
-          <Image
-            source={require("../../assets/images/learning/voice.png")}
-            style={{ width: 54, height: 42 }}
-          />
-        </TouchableOpacity>
-      </View>
-      {/* <View style={styles.learningScreen}>
-        <FlatList
-          data={spells}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item, index }) => (
-            <View key={index} style={styles.miniContainer}>
-              <Text style={styles.heading}>
-                {item.id} - {item.name}
-              </Text>
-              <Image source={item.image} style={{ width: 100, height: 100 }} />
-              <Button title="Play" onPress={() => alert("Button Pressed")} />
-              <TouchableOpacity style={styles.playButton}>
-                <Text style={styles.singleButtonText}>Play</Text>
-                <Image
-                  source={item.iconImage}
-                  style={{ width: 30, height: 30 }}
-                />
-              </TouchableOpacity>
-            </View>
-          )}
-        />
-      </View> */}
+      {/* <View style={styles.learningScreenList}> */}
+      <FlatList
+        data={spells}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item, index }) => (
+          <View key={index} style={styles.miniContainer}>
+            <Text style={styles.heading}>
+              {item.id} - {item.name}
+            </Text>
+            <Image source={item.image} style={styles.singleLearningImage} />
+            <TouchableOpacity
+              style={styles.playButton}
+              onPress={() => router.push("/details")}
+            >
+              <Text style={styles.singleButtonText}>Play</Text>
+              <Image
+                source={item.iconImage}
+                style={styles.singleLearningButtonImage}
+              />
+            </TouchableOpacity>
+          </View>
+        )}
+      />
+      {/* </View> */}
+      {/* flat list ends here  */}
       <BottomNavigation />
     </ImageBackground>
   );
@@ -91,17 +82,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
-  // mainContainer: {
-  //   flex: 1,
-  //   backgroundColor: "#000",
-  // },
-
   headingSingle: {
     fontSize: 70,
     fontFamily: "bubbles",
     textAlign: "center",
   },
-  miniContainer: {},
+  miniContainer: {
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    columnGap: 30,
+    rowGap: 30,
+    backgroundColor: "#fff",
+    marginVertical: 10,
+    padding: 20,
+    borderRadius: 60,
+    width: "95%",
+  },
   singleLearning: {
     flex: 1,
     justifyContent: "center",
@@ -112,8 +110,8 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   singleLearningImage: {
-    width: 180,
-    height: 180,
+    width: 50,
+    height: 50,
   },
   heading: {
     fontSize: 18,
@@ -121,15 +119,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textTransform: "uppercase",
   },
-  normalText: {
-    fontSize: 16,
-  },
   playButton: {
     backgroundColor: "#FF049B",
     color: "#fff",
     borderRadius: 45,
-    width: 286,
-    height: 88,
+    width: 120,
+    height: 55,
     textAlign: "center",
     flex: 0,
     flexDirection: "row",
@@ -139,6 +134,10 @@ const styles = StyleSheet.create({
   },
   singleButtonText: {
     color: "#fff",
-    fontSize: 75,
+    fontSize: 20,
+  },
+  singleLearningButtonImage: {
+    width: 30,
+    height: 20,
   },
 });
