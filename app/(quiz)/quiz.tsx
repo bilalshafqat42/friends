@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
+import TopNavigation from "@/components/TopNavigation";
 import BottomNavigation from "@/components/BottomNavigation";
 
 const QuizScreen = () => {
@@ -9,6 +10,7 @@ const QuizScreen = () => {
       source={require("../../assets/images/welcome.png")}
       style={styles.quizScreen}
     >
+      <TopNavigation/>
       <View style={styles.quizScreen}>
         <Text>Quiz Screen</Text>
       </View>

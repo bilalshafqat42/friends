@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
+import TopNavigation from "@/components/TopNavigation";
 import BottomNavigation from "@/components/BottomNavigation";
 
 const LearningScreen = () => {
@@ -9,6 +10,7 @@ const LearningScreen = () => {
       source={require("../../assets/images/welcome.png")}
       style={styles.learningScreen}
     >
+      <TopNavigation/>
       <View style={styles.learningScreen}>
         <Text>Learning</Text>
       </View>
