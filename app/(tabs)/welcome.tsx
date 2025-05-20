@@ -26,11 +26,17 @@ const WelcomeScreen = () => {
           </Link>
         </View>
         <View style={styles.bottomNavigation}>
-          <Link href="/">
-            <Text>Back to Home</Text>
+          <Link href="/" style={styles.leftNav}>
+            <Image
+              source={require("../../assets/images/left.png")}
+              style={styles.navigationLeft}
+            />
           </Link>
-          <Link href="/">
-            <Text>Back to Home</Text>
+          <Link href="/" style={styles.rightNav}>
+            <Image
+              source={require("../../assets/images/right.png")}
+              style={styles.navigationRight}
+            />
           </Link>
         </View>
       </View>
@@ -63,18 +69,46 @@ const styles = StyleSheet.create({
     alignItems: "center", // center text inside
   },
   bottomNavigation: {
-    width: 100,
-    position: "fixed",
-    bottom: 0,
+    // width: 100,
+    // position: "fixed",
+    // bottom: 0,
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 100,
+    width: "90%",
   },
   learningButtonImage: {
     width: 309,
     height: 170,
-    marginBottom: 10,
+    // marginBottom: 30,
   },
   quizButtonImage: {
     width: 309,
     height: 170,
-    marginTop: 10,
+    marginTop: 30,
   },
+  // leftNav: {
+  //   width: "50%",
+  //   position: "fixed",
+  //   left: 20,
+  //   bottom: 20,
+  // },
+  // rightNav: {
+  //   position: "fixed",
+  //   right: 20,
+  //   bottom: 20,
+  //   width: "50%",
+  // },
+  // navigationLeft: {
+  //   width: 50,
+  //   right: 50,
+  //   marginBottom: 20,
+  // },
+  // navigationRight: {
+  //   width: 50,
+  //   right: 50,
+  //   marginBottom: 20,
+  // },
 });
