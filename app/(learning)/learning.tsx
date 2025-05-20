@@ -95,10 +95,7 @@ const styles = StyleSheet.create({
   //   flex: 1,
   //   backgroundColor: "#000",
   // },
-  singleLearningImage: {
-    width: 180,
-    height: 180,
-  },
+
   headingSingle: {
     fontSize: 70,
     fontFamily: "bubbles",
@@ -109,8 +106,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column",
+    rowGap: 30,
     width: "100%",
     height: "100%",
+  },
+  singleLearningImage: {
+    width: 180,
+    height: 180,
   },
   heading: {
     fontSize: 18,
