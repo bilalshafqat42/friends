@@ -6,10 +6,10 @@ import React from "react";
 const BottomNavigation = () => {
   return (
     <View style={styles.bottomNavigation}>
-      <Link href="/">
+      <Link href="/welcome">
         <Image source={require("../assets/images/left.png")} />
       </Link>
-      <Link href="/">
+      <Link href="/welcome">
         <Image source={require("../assets/images/right.png")} />
       </Link>
     </View>
