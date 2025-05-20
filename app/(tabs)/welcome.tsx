@@ -11,22 +11,28 @@ const WelcomeScreen = () => {
       contentFit="cover"
     >
       <View style={styles.welcomeScreenContainer}>
-        <Link href="/welcome">
-          <Image
-            source={require("../../assets/images/learning.png")}
-            style={styles.playButtonImage}
-          />
-        </Link>
-        <Link href="/welcome">
-          <Image
-            source={require("../../assets/images/quiz.png")}
-            style={styles.playButtonImage}
-          />
-        </Link>
-
-        <Link href="/">
-          <Text>Back to Home</Text>
-        </Link>
+        <View style={styles.miniContainer}>
+          <Link href="/welcome">
+            <Image
+              source={require("../../assets/images/learning.png")}
+              style={styles.learningButtonImage}
+            />
+          </Link>
+          <Link href="/welcome">
+            <Image
+              source={require("../../assets/images/quiz.png")}
+              style={styles.quizButtonImage}
+            />
+          </Link>
+        </View>
+        <View style={styles.bottomNavigation}>
+          <Link href="/">
+            <Text>Back to Home</Text>
+          </Link>
+          <Link href="/">
+            <Text>Back to Home</Text>
+          </Link>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -36,6 +42,13 @@ export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   welcomeScreenContainer: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "center",
+    width: "100%",
+  },
+  miniContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -49,8 +62,19 @@ const styles = StyleSheet.create({
     width: "100%", // makes it take full width of parent
     alignItems: "center", // center text inside
   },
-  playButtonImage: {
-    width: 135,
-    height: 97,
+  bottomNavigation: {
+    width: 100,
+    position: "fixed",
+    bottom: 0,
+  },
+  learningButtonImage: {
+    width: 309,
+    height: 170,
+    marginBottom: 10,
+  },
+  quizButtonImage: {
+    width: 309,
+    height: 170,
+    marginTop: 10,
   },
 });
