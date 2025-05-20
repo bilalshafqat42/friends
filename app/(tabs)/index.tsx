@@ -2,25 +2,28 @@ import { ImageBackground } from "expo-image";
 import { Link } from "expo-router";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const HomeScreen = () => {
   return (
-    <ImageBackground
-      style={styles.mainBG}
-      contentFit="cover"
-      source={require("../../assets/images/newBg.jpg")}
-    >
-      <Image
-        source={require("../../assets/images/friends.png")}
-        style={styles.logoImage}
-      />
-      <Link href="/welcome">
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ImageBackground
+        style={styles.mainBG}
+        contentFit="cover"
+        source={require("../../assets/images/newBg.jpg")}
+      >
         <Image
-          source={require("../../assets/images/play.png")}
-          style={styles.playButtonImage}
+          source={require("../../assets/images/friends.png")}
+          style={styles.logoImage}
         />
-      </Link>
-    </ImageBackground>
+        <Link href="/welcome">
+          <Image
+            source={require("../../assets/images/play.png")}
+            style={styles.playButtonImage}
+          />
+        </Link>
+      </ImageBackground>
+    </GestureHandlerRootView>
   );
 };
 
