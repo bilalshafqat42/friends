@@ -10,7 +10,7 @@ const DetailsScreen = () => {
       source={require("../../assets/images/welcome.png")}
       style={styles.learningScreen}
     >
-      <TopNavigation/>
+      {/* <TopNavigation/> */}
       <View style={styles.singleLearning}>
         <Image
           source={require("../../assets/images/learning/ant.png")}
@@ -25,7 +25,7 @@ const DetailsScreen = () => {
           />
         </TouchableOpacity>
       </View>
-      <BottomNavigation/>
+      {/* <BottomNavigation/> */}
     </ImageBackground>
   );
 };

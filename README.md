@@ -48,3 +48,13 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+// expo speech for audio 
+// colors global varialbles constants 
+// no progress bar on flatlist of learning
+// remove header and footer
+// progress bar package
+
+// navigation forward and backward in expo router
+// component details on the behalf of id
