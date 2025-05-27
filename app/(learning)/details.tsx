@@ -3,8 +3,14 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { ImageBackground } from "expo-image";
 import TopNavigation from "@/components/TopNavigation";
 import BottomNavigation from "@/components/BottomNavigation";
+import * as Speech from "expo-speech";
 
 const DetailsScreen = () => {
+  const speak = () => {
+    const thingToSay = "1";
+    Speech.speak(thingToSay);
+  };
+
   return (
     <ImageBackground
       source={require("../../assets/images/welcome.png")}
@@ -17,7 +23,7 @@ const DetailsScreen = () => {
           style={styles.singleLearningImage}
         />
         <Text style={styles.headingSingle}>ANT</Text>
-        <TouchableOpacity style={styles.playButton}>
+        <TouchableOpacity style={styles.playButton} onPress={speak}>
           <Text style={styles.singleButtonText}>Play</Text>
           <Image
             source={require("../../assets/images/learning/voice.png")}
@@ -25,7 +31,7 @@ const DetailsScreen = () => {
           />
         </TouchableOpacity>
       </View>
-      {/* <BottomNavigation/> */}
+      <BottomNavigation />
     </ImageBackground>
   );
 };

@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Image } from "react-native";
 import React from "react";
-import { TextInput } from "react-native-gesture-handler";
 
 const BottomNavigation = () => {
   return (

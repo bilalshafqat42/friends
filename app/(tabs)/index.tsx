@@ -7,7 +7,7 @@ import * as Speech from "expo-speech";
 
 const HomeScreen = () => {
   const speak = () => {
-    const thingToSay = "1";
+    const thingToSay = "Bilal Shafqat";
     Speech.speak(thingToSay);
   };
   return (
@@ -17,7 +17,7 @@ const HomeScreen = () => {
         contentFit="cover"
         source={require("../../assets/images/newBg.jpg")}
       >
-        <Button title="Speak" onPress={speak} />
+        {/* <Button title="Speak" onPress={speak} /> */}
         <Image
           source={require("../../assets/images/friends.png")}
           style={styles.logoImage}
