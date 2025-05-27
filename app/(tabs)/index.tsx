@@ -1,10 +1,15 @@
 import { ImageBackground } from "expo-image";
 import { Link } from "expo-router";
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, TextInput, Button } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import * as Speech from "expo-speech";
 
 const HomeScreen = () => {
+  const speak = () => {
+    const thingToSay = "1";
+    Speech.speak(thingToSay);
+  };
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ImageBackground
@@ -12,6 +17,7 @@ const HomeScreen = () => {
         contentFit="cover"
         source={require("../../assets/images/newBg.jpg")}
       >
+        <Button title="Speak" onPress={speak} />
         <Image
           source={require("../../assets/images/friends.png")}
           style={styles.logoImage}
