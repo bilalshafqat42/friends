@@ -4,11 +4,17 @@ import { ImageBackground } from "expo-image";
 import TopNavigation from "@/components/TopNavigation";
 import BottomNavigation from "@/components/BottomNavigation";
 import * as Speech from "expo-speech";
+import { spells } from "@/assets/db/spell";
+import { useLocalSearchParams } from "expo-router";
 
 const DetailsScreen = () => {
+  const { id } = useLocalSearchParams();
+  const spell = spells.find((item) => item.id === Number(id));
+  if (!spell) return <Text> Spell not found</Text>;
+
   const speak = () => {
-    const thingToSay = "1";
-    Speech.speak(thingToSay);
+    // const thingToSay = "1";
+    Speech.speak(spell.name);
   };
 
   return (
@@ -19,14 +25,16 @@ const DetailsScreen = () => {
       {/* <TopNavigation/> */}
       <View style={styles.singleLearning}>
         <Image
-          source={require("../../assets/images/learning/ant.png")}
+          // source={require("../../assets/images/learning/ant.png")}
+          source={spell.image}
           style={styles.singleLearningImage}
         />
-        <Text style={styles.headingSingle}>ANT</Text>
+        <Text style={styles.headingSingle}>{spell.name}</Text>
         <TouchableOpacity style={styles.playButton} onPress={speak}>
           <Text style={styles.singleButtonText}>Play</Text>
           <Image
-            source={require("../../assets/images/learning/voice.png")}
+            // source={require("../../assets/images/learning/voice.png")}
+            source={spell.iconImage}
             style={{ width: 54, height: 42 }}
           />
         </TouchableOpacity>

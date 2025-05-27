@@ -17,26 +17,7 @@ import { useRouter } from "expo-router";
 
 const LearningScreen = () => {
   const router = useRouter();
-  // const myData = [
-  //   { id: 1, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 2, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 3, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 4, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 5, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 6, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 7, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 8, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 9, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 10, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 11, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 12, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 13, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 14, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 15, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 16, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 17, name: "Bilal", desc: "welcome i am bilal the developer" },
-  //   { id: 18, name: "Bilal", desc: "welcome i am bilal the developer" },
-  // ];
+
   return (
     <ImageBackground
       source={require("../../assets/images/welcome.png")}
@@ -55,7 +36,15 @@ const LearningScreen = () => {
             <Image source={item.image} style={styles.singleLearningImage} />
             <TouchableOpacity
               style={styles.playButton}
-              onPress={() => router.push("/details")}
+              // onPress={() => router.push("/details")}
+              onPress={() =>
+                router.push({
+                  pathname: "/details",
+                  params: {
+                    id: item.id.toString(),
+                  },
+                })
+              }
             >
               <Text style={styles.singleButtonText}>Play</Text>
               <Image
