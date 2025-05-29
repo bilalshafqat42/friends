@@ -14,15 +14,10 @@ import { spells } from "../../assets/db/spell";
 import LearnComponent from "@/components/Learn";
 import { FlatList } from "react-native-gesture-handler";
 import { useRouter } from "expo-router";
-import * as Speech from "expo-speech";
+import { Colors } from "@/constants/Colors";
 
 const LearningScreen = () => {
   const router = useRouter();
-
-  const speak = () => {
-    // const thingToSay = "1";
-    Speech.speak(item.name);
-  };
 
   return (
     <ImageBackground
@@ -116,7 +111,8 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   playButton: {
-    backgroundColor: "#FF049B",
+    // backgroundColor: "#FF049B",
+    backgroundColor: Colors.primaryColor,
     color: "#fff",
     borderRadius: 45,
     width: 120,
