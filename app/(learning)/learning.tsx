@@ -24,7 +24,7 @@ const LearningScreen = () => {
       source={require("../../assets/images/welcome.png")}
       style={styles.learningScreen}
     >
-      <TopNavigation />
+      {/* <TopNavigation /> */}
       {/* <View style={styles.learningScreenList}> */}
       <FlatList
         data={spells}
@@ -58,7 +58,7 @@ const LearningScreen = () => {
       />
       {/* </View> */}
       {/* flat list ends here  */}
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
     </ImageBackground>
   );
 };
@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+        paddingTop: 80
+
   },
   headingSingle: {
     fontSize: 70,
