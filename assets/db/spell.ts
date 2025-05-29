@@ -39,7 +39,7 @@ export const spells = [
     id: 7,
     name: "grapes",
     image: require("../images/learning/grapes.png"),
-    iconImage: require("../images/learning/grapes.png"),
+    iconImage: require("../images/learning/voice.png"),
   },
   {
     id: 8,

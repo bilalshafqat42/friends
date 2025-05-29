@@ -14,9 +14,15 @@ import { spells } from "../../assets/db/spell";
 import LearnComponent from "@/components/Learn";
 import { FlatList } from "react-native-gesture-handler";
 import { useRouter } from "expo-router";
+import * as Speech from "expo-speech";
 
 const LearningScreen = () => {
   const router = useRouter();
+
+  const speak = () => {
+    // const thingToSay = "1";
+    Speech.speak(item.name);
+  };
 
   return (
     <ImageBackground
@@ -79,7 +85,7 @@ const styles = StyleSheet.create({
   miniContainer: {
     flex: 0,
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     columnGap: 30,
     rowGap: 30,
@@ -101,6 +107,7 @@ const styles = StyleSheet.create({
   singleLearningImage: {
     width: 50,
     height: 50,
+    resizeMode: "contain",
   },
   heading: {
     fontSize: 18,

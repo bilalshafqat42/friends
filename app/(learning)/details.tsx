@@ -1,14 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import { ImageBackground } from "expo-image";
+// import { ImageBackground } from "expo-image";
 import TopNavigation from "@/components/TopNavigation";
 import BottomNavigation from "@/components/BottomNavigation";
 import * as Speech from "expo-speech";
 import { spells } from "@/assets/db/spell";
 import { useLocalSearchParams } from "expo-router";
+import { ImageBackground } from "react-native";
 
 const DetailsScreen = () => {
   const { id } = useLocalSearchParams();
+
   const spell = spells.find((item) => item.id === Number(id));
   if (!spell) return <Text> Spell not found</Text>;
 
@@ -32,11 +34,7 @@ const DetailsScreen = () => {
         <Text style={styles.headingSingle}>{spell.name}</Text>
         <TouchableOpacity style={styles.playButton} onPress={speak}>
           <Text style={styles.singleButtonText}>Play</Text>
-          <Image
-            // source={require("../../assets/images/learning/voice.png")}
-            source={spell.iconImage}
-            style={{ width: 54, height: 42 }}
-          />
+          <Image source={spell.iconImage} style={styles.iconsImagesList} />
         </TouchableOpacity>
       </View>
       <BottomNavigation />
@@ -63,8 +61,10 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   singleLearningImage: {
-    width: 180,
+    // width: 50,
     height: 180,
+    width: "100%",
+    resizeMode: "contain",
   },
   headingSingle: {
     fontSize: 70,
@@ -88,5 +88,10 @@ const styles = StyleSheet.create({
   singleButtonText: {
     color: "#fff",
     fontSize: 75,
+  },
+  iconsImagesList: {
+    width: 54,
+    // height: 42,
+    resizeMode: "cover",
   },
 });
